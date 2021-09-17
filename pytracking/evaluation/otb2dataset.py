@@ -6,16 +6,7 @@ from collections import OrderedDict, defaultdict
 
 
 class OTBDataset(BaseDataset):
-    """ OTB-2015 dataset
-
-    Publication:
-        Object Tracking Benchmark
-        Wu, Yi, Jongwoo Lim, and Ming-hsuan Yan
-        TPAMI, 2015
-        http://faculty.ucmerced.edu/mhyang/papers/pami15_tracking_benchmark.pdf
-
-    Download the dataset from http://cvlab.hanyang.ac.kr/tracker_benchmark/index.html
-    """
+   
     def __init__(self):
         super().__init__()
         self.base_path = self.env_settings.otb_path
@@ -29,7 +20,7 @@ class OTBDataset(BaseDataset):
         #count number of images
         totalFiles = 0
         totalDir = 0
-        for base, dirs, files in os.walk("/gdrive/My Drive/Football/img"):
+        for base, dirs, files in os.walk("/gdrive/My Drive/img"):
             for directories in dirs:
                 totalDir += 1
             for Files in files:
@@ -56,11 +47,11 @@ class OTBDataset(BaseDataset):
         #load inital BB     
         gt = OrderedDict()
         #define numbers of tracked objects
-        with open('/gdrive/My Drive/pytracking/data.TXT') as myfile:
+        with open('/gdrive/My Drive/data/data.TXT') as myfile:
             total_lines = sum(1 for line in myfile)
         print("detected Objects:" + str(total_lines))
         #define ground truth data for first frame
-        with open('/gdrive/My Drive/pytracking/data.TXT') as myfile:
+        with open('/gdrive/My Drive/data/data.TXT') as myfile:
             for i in range(0,total_lines):
                 line = myfile.readline()
                 data = (line.strip().split(" "))
