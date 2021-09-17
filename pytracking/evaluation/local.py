@@ -14,7 +14,7 @@ def local_env_settings():
     settings.nfs_path = '/gdrive/My Drive'
     settings.otb_path = '/gdrive/My Drive'
     settings.result_plot_path = '/gdrive/My Drive/pytracking/pytracking/result_plots/'
-    settings.results_path = '/gdrive/My Drive/pytracking/pytracking/tracking_results/'    # Where to store tracking results
+    settings.results_path = '/gdrive/My Drive/tracking_results/'    # Where to store tracking results
     settings.segmentation_path = '/gdrive/My Drive/pytracking/pytracking/segmentation_results/'
     settings.tn_packed_results_path = '/gdrive/My Drive'
     settings.tpl_path = '/gdrive/My Drive'

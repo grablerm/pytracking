@@ -20,7 +20,7 @@ class OTBDataset(BaseDataset):
         #count number of images
         totalFiles = 0
         totalDir = 0
-        for base, dirs, files in os.walk("/gdrive/My Drive/img"):
+        for base, dirs, files in os.walk("/gdrive/My Drive/images"):
             for directories in dirs:
                 totalDir += 1
             for Files in files:
@@ -71,7 +71,7 @@ class OTBDataset(BaseDataset):
 
     def _get_sequence_info_list(self):
         sequence_info_list = [
-            {"name": "Objects", "path": "Football/img", "startFrame": 1, "endFrame": 124, "nz": 4, "ext": "jpg","object_class": "person"}
+            {"name": "Objects", "path": "images", "startFrame": 1, "endFrame": 124, "nz": 4, "ext": "jpg","object_class": "person"}
              ]
             
             
