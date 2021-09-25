@@ -30,8 +30,19 @@ def _save_tracker_output(seq: Sequence, tracker: Tracker, output: dict):
         for i in range(0,length):
             data[i] = bb[i]
         
-        with open("/gdrive/My Drive/result/resultfootball.json", 'w') as fp:
+        with open("/gdrive/My Drive/tracking_results/result.json", 'w') as fp:
             json.dump(data, fp)
+            
+            
+    def save_one_file_txt(bb):
+        data = list()
+        length = len(bb)
+        for i in range(0,length-1):
+            data[i] = bb[i]
+        
+        with open("/gdrive/My Drive/tracking_results/result.txt", 'w') as txt:
+            txt.write(str(data))
+            txt.write("\n")
 
 
 
@@ -66,8 +77,9 @@ def _save_tracker_output(seq: Sequence, tracker: Tracker, output: dict):
                     #print(d)
                     bb.append(d)
                     #print(bb)
-                    save_one_file(bb)
-                    save_bb(bbox_file, d)
+                save_one_file(bb)
+                save_bb(bbox_file, d)
+                    #save_one_file_txt(d)
                     
                     
                 
