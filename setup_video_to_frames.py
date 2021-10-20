@@ -14,7 +14,6 @@ os.mkdir("/gdrive/My Drive/data")
 while success:
   cv2.imwrite("/gdrive/My Drive/images/%s.jpg" % str(count).zfill(4), image)     # save frame as JPEG file      
   success,image = vidcap.read()
-  print('Read a new frame: ', success)
   count += 1
 
 os.remove("/gdrive/My Drive/video/%s" % video)
