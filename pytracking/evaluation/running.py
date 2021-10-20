@@ -74,9 +74,7 @@ def _save_tracker_output(seq: Sequence, tracker: Tracker, output: dict):
                 for obj_id, d in data_dict.items():
                     bbox_file = '{}_{}.txt'.format(base_results_path, obj_id)
                     one_file = 'results.txt'
-                    #print(d)
                     bb.append(d)
-                    #print(bb)
                 save_one_file(bb)
                 save_bb(bbox_file, d)
                     #save_one_file_txt(d)
@@ -121,21 +119,12 @@ def run_sequence(seq: Sequence, tracker: Tracker, debug=False, visdom_info=None)
 
     visdom_info = {} if visdom_info is None else visdom_info
 
-    """
-    if _results_exist() and not debug:
-        print('FPS: {}'.format(-1))
-        return
-    """
+ 
     print('Tracker: {} {} {} ,  Sequence: {}'.format(tracker.name, tracker.parameter_name, tracker.run_id, seq.name))
-
-    #print('Tracker: {} {} {} ,  Sequence:'.format(tracker.name, tracker.parameter_name, tracker.run_id))
-
     if debug:
-        print("TESTdebug")
         output = tracker.run_sequence(seq, debug=debug, visdom_info=visdom_info)
     else:
         try:
-            print("TESTnodebug")
             output = tracker.run_sequence(seq, debug=debug, visdom_info=visdom_info)
         except Exception as e:
             print(e)
@@ -187,6 +176,5 @@ def run_dataset(dataset, trackers, debug=False, threads=0, visdom_info=None):
     elif mode == 'parallel':
         param_list = [(seq, tracker_info, debug, visdom_info) for seq, tracker_info in product(dataset, trackers)]
         with multiprocessing.Pool(processes=threads) as pool:
-            print("Imap")
             pool.starmap(run_sequence, param_list)
     print('Done')

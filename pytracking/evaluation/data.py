@@ -73,7 +73,7 @@ class Sequence:
             if self.object_ids is not None:
                 init_data[0]['object_ids'] = self.object_ids
                 
-                print("Init Data new:")
+                print("Init Data:")
                 
 
             if self.ground_truth_rect is not None:
