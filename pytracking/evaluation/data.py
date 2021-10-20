@@ -83,7 +83,7 @@ class Sequence:
                     #kommentiere oberes aus, delete beloq
                     #Tennis
                     gt = OrderedDict()
-                    with open('/gdrive/My Drive/data/data.TXT') as myfile:
+                    with open('/gdrive/My Drive/data/data.txt') as myfile:
                         for i in range(0,len(self.object_ids)):
                             line = myfile.readline()
                             data = (line.strip().split(" "))

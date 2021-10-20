@@ -47,11 +47,11 @@ class OTBDataset(BaseDataset):
         #load inital BB     
         gt = OrderedDict()
         #define numbers of tracked objects
-        with open('/gdrive/My Drive/data/data.TXT') as myfile:
+        with open('/gdrive/My Drive/data/data.txt') as myfile:
             total_lines = sum(1 for line in myfile)
         print("detected Objects:" + str(total_lines))
         #define ground truth data for first frame
-        with open('/gdrive/My Drive/data/data.TXT') as myfile:
+        with open('/gdrive/My Drive/data/data.txt') as myfile:
             for i in range(0,total_lines):
                 line = myfile.readline()
                 data = (line.strip().split(" "))
