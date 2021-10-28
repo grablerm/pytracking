@@ -10,7 +10,6 @@ count = 0
 
 os.mkdir("/gdrive/My Drive/images/")
 os.mkdir("/gdrive/My Drive/tracking_results/")
-os.mkdir("/gdrive/My Drive/data")
 while success:
   cv2.imwrite("/gdrive/My Drive/images/%s.jpg" % str(count).zfill(4), image)     # save frame as JPEG file      
   success,image = vidcap.read()
